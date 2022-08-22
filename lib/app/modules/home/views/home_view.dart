@@ -42,7 +42,7 @@ class HomeView extends GetView<HomeController> {
                 }
                 // print('${listAlllokasi}');
                 return Form(
-                  key: GlobalKey<FormState>(),
+                  key: _formKey,
                   child: Column(
                     children: [
                       TextFormField(
@@ -141,8 +141,8 @@ class HomeView extends GetView<HomeController> {
                             ),
                             onPressed: () {
                               if (_formKey.currentState!.validate()) {
-                                if (controller.nameC == '' ||
-                                    controller.kota == '') {
+                                if (controller.nameC.text == '' ||
+                                    controller.kota.value == '') {
                                   print('Kosoong');
                                 } else {
                                   print('ada ya');
